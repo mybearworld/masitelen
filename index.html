@@ -23,8 +23,18 @@
         padding-top: 0;
         margin: 0;
       }
-      textarea {
+      .textarea-container {
         flex-grow: 1;
+        display: flex;
+        position: relative;
+      }
+      #textarea {
+        flex-grow: 1;
+      }
+      .size-control {
+        position: absolute;
+        bottom: 1rem;
+        right: 1rem;
       }
       header {
         display: flex;
@@ -55,6 +65,17 @@
         >󱤿󱥠󱦐󱥌󱤉󱥌󱤉󱤓󱤉󱥪󱤎󱦑</a
       >
     </header>
-    <textarea></textarea>
+    <div class="textarea-container">
+      <textarea id="textarea"></textarea>
+      <div class="size-control">
+        󱥣 <input type="range" min="75" max="400" value="100" id="size" />
+      </div>
+    </div>
   </body>
+  <script type="module">
+    const textarea = document.querySelector("#textarea");
+    document.querySelector("#size").addEventListener("input", (e) => {
+      textarea.style.fontSize = `${e.target.value}%`;
+    });
+  </script>
 </html>
