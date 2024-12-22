@@ -30,6 +30,7 @@
       }
       #textarea {
         flex-grow: 1;
+        padding: 0.5rem 1ch;
       }
       .size-control {
         position: absolute;
@@ -66,9 +67,10 @@
       >
     </header>
     <div class="textarea-container">
-      <textarea id="textarea"></textarea>
+      <textarea id="textarea" spellcheck="false"></textarea>
       <div class="size-control">
-        󱥣 <input type="range" min="75" max="400" value="100" id="size" />
+        󱥣
+        <input type="range" min="75" max="400" value="100" id="size" />
       </div>
     </div>
   </body>
